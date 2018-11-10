@@ -1,4 +1,3 @@
-drop table if exists events;
 
 create table events(
 	id serial primary key,
