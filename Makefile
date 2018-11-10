@@ -5,6 +5,7 @@ SCRIPTS=${CURDIR}/scripts
 CSV='${CURDIR}/cassini/data/master_plan.csv'
 MASTER=${SCRIPTS}/import.sql
 LOOKUP=${SCRIPTS}/lookuptables.sql
+CLEANTABLES=${SCRIPTS}/cleantables.sql
 NORMALIZE=${SCRIPTS}/normalize.sql
 
 all: normalize
@@ -18,7 +19,7 @@ import: master
 	@echo "COPY import.master_plan FROM $(CSV) WITH DELIMITER ',' HEADER CSV;" >> $(BUILD)
 
 normalize: import
-	@echo "drop table if exists events;" >> $(BUILD)
+	@cat $(CLEANTABLES) >> $(BUILD)
 	$(MAKE) createLookupTable TABLE=teams DESCRIPTIONCOL=team
 	$(MAKE) createLookupTable TABLE=spass_types DESCRIPTIONCOL=spass_type
 	$(MAKE) createLookupTable TABLE=targets DESCRIPTIONCOL=target
