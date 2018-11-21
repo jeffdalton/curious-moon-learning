@@ -1,0 +1,40 @@
+{
+    "db": "Enceladus",
+    "build_dir": "build/",
+    "build_script": "build.sql",
+    "template_dir": "template/",
+    "lookup_template": "lookup.tmp",
+    "drop_template": "drop.tmp",
+	"normalize_tables": [
+        {
+            "table": "events",
+            "column": "",
+            "isLookup": false
+        },
+        {
+            "table": "teams",
+            "column": "team",
+            "isLookup": true
+        },
+        {
+            "table": "targets",
+            "column": "target",
+            "isLookup": true
+        },
+        {
+            "table": "spass_types",
+            "column": "spass_type",
+            "isLookup": true
+        },
+        {
+            "table": "requests",
+            "column": "request_name",
+            "isLookup": true
+        },
+        {
+            "table": "event_types",
+            "column": "library_definition",
+            "isLookup": true
+        }
+	]
+}

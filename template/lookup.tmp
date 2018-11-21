@@ -1,0 +1,7 @@
+select distinct([COLUMN]) as description
+into [TABLE]
+from import.master_plan;
+
+alter table [TABLE]
+add id serial primary key;
+

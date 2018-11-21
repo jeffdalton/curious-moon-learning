@@ -1,0 +1,17 @@
+{
+	"db": "Enceladus",
+	"lookup_tables": [
+		{
+			"table": "foo",
+			"column": "bar"
+		},
+		{
+			"table": "first",
+			"column": "second"
+		},
+		{
+			"table": "new",
+			"column": "boy"
+	       	}
+	]
+}
