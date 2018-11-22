@@ -1,1 +1,1 @@
-drop table if exists [TABLE] cascades;
+drop table if exists [TABLE] cascade;

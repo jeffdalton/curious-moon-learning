@@ -14,3 +14,4 @@ create table import.master_plan (
 	description text
 );
 
+COPY import.master_plan FROM '[IMPORT_FILE]' WITH DELIMITER ',' HEADER CSV;

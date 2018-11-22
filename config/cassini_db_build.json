@@ -1,10 +1,15 @@
 {
-    "db": "Enceladus",
+    "db": "enceladus",
+    "script_dir": "script/",
     "build_dir": "build/",
     "build_script": "build.sql",
     "template_dir": "template/",
     "lookup_template": "lookup.tmp",
     "drop_template": "drop.tmp",
+    "import_template": "import.tmp",
+    "normalize_template": "normalize.tmp",
+    "build_file": "build.sql",
+    "import_file": "cassini/data/master_plan.csv",
 	"normalize_tables": [
         {
             "table": "events",
