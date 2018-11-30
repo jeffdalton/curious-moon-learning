@@ -1,4 +1,5 @@
-{
+
+    {
     "db": "enceladus",
     "script_dir": "script/",
     "build_dir": "build/",
