@@ -43,3 +43,11 @@ if [ ! $? -eq 0 ]; then
 fi
 
 cat $import_template | sed 's,\[IMPORT_FILE\],'"${import_file}"',' >> $build_file
+
+cat $json_config | jq -c '.normalize_tables | .[]' | while IFS='' read line;do
+    table=$(echo "$line" | jq --raw-output '.table')
+    column=$(echo "$line" | jq --raw-output '.column')
+    isLookup=$(echo "$line" | jq --raw-output '.isLookup')
+    echo "table $table  column $column  isLookup $isLookup"
+done
+

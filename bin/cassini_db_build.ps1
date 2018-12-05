@@ -2,15 +2,20 @@ Write-Host "Start $($MyInvocation.MyCommand.Name) @ $(Get-Date)"
 
 function Build-Import-Script($import_template, $import_file, $build_file)
 {
-	Write-Output "Import Template $import_template"
-	Write-Output "Import File $import_file"
-	Write-Output "Build File $build_file"
+	Write-Host "Import Template $import_template"
+	Write-Host "Import File $import_file"
+	Write-Host "Build File $build_file"
 	(Get-Content $import_template).Replace('[IMPORT_FILE]', $import_file) | 
 	Add-Content $build_file
 }
 
 function Build-Normalize-Script($tables_list, $drop_template, $lookup_template, $normalize_template, $build_file)
 {
+	Write-Host "tables_list $tables_list"
+	Write-Host "drop_template $drop_template"
+	Write-Host "lookup_template $lookup_template"
+	Write-Host "normalize_template $normalize_template"
+	Write-Host "build_file $build_file"
 	ForEach($item in $tables_list) {
 		$table = $item.table
 		$column = $item.column
