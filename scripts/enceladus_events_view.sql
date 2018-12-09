@@ -1,4 +1,4 @@
-drop view if exists enceladus_events;
+drop materialized view if exists enceladus_events;
 
 create materialized view enceladus_events as
 select
