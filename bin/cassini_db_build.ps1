@@ -49,6 +49,7 @@ $normalize_template = $base_dir + $config.template_dir + $config.normalize_templ
 $import_file = $base_dir + $config.import_file; Write-Host "import_file $import_file"
 $build_file = $build_dir + $config.build_file; Write-Host "build_file $build_file"
 
+# Clean Build Directory
 if (Test-Path -Path $build_dir)
 {
 	Remove-Item $build_dir -Force -Recurse | Out-Null
@@ -58,6 +59,8 @@ if (!$?) {
 	Write-Error "Error End $($MyInvocation.MyCommand.Name) @ $(Get-Date)"
 	exit
 }
+
+
 
 Build-Import-Script $import_template $import_file $build_file
 Build-Normalize-Script $config.normalize_tables $drop_template $lookup_template $normalize_template $build_file
