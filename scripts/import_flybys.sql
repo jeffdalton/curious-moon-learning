@@ -11,3 +11,10 @@ create table flybys (
 copy flybys 
 from '/home/jeffdalton/labs/curious_moon/cassini/data/jpl_flybys.csv'
 delimiter ',' header csv;
+
+alter table flybys
+add analysis_window tsrange;
+
+update flybys
+set analysis_window = tsrange(window_start, window_end, '[]');
+
